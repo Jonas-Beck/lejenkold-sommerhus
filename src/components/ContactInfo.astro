@@ -1,0 +1,19 @@
+---
+export interface Props {
+  email: string;
+  phone: string;
+}
+
+const { email, phone } = Astro.props;
+---
+
+<div class="space-y-2">
+  <p class="flex items-center gap-2">
+    <span class="font-medium">E-mail:</span>
+    <a href={`mailto:${email}`} class="text-primary hover:underline">{email}</a>
+  </p>
+  <p class="flex items-center gap-2">
+    <span class="font-medium">Telefon:</span>
+    <a href={`tel:${phone.replace(/\s/g, '')}`} class="text-primary hover:underline">{phone}</a>
+  </p>
+</div>

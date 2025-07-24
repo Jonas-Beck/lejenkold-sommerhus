@@ -1,0 +1,18 @@
+---
+export interface Props {
+  title: string;
+  items: string[];
+  class?: string;
+}
+
+const { title, items, class: className = "" } = Astro.props;
+---
+
+<div class={`bg-muted/50 p-4 rounded-lg ${className}`}>
+  <h3 class="font-semibold mb-3">{title}</h3>
+  <ul class="space-y-1 text-sm">
+    {items.map(item => (
+      <li>• {item}</li>
+    ))}
+  </ul>
+</div>

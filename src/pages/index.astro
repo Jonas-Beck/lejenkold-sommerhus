@@ -1,5 +1,30 @@
 ---
 import Layout from '../layouts/main.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+import FeatureList from '../components/FeatureList.astro';
+import PriceCard from '../components/PriceCard.astro';
+import Card from '../components/ui/Card.astro';
+import CardContent from '../components/ui/CardContent.astro';
+
+// Data for the components
+const facilities = [
+	"Rummelig udestue med sofa og spisebord",
+	"Soveværelse med dobbeltseng", 
+	"Toilet med brus",
+	"Køkken med mikroovn, kølefryseskab og opvaskemaskine",
+	"Stue med sovesofa 140×200",
+	"4 sovepladser + 2 i anneks"
+];
+
+const equipment = [
+	"50/50 bredbånd",
+	"Varmepumpe/aircon", 
+	"Boxer TV lille pakke",
+	"Strøm tændt ved ankomst",
+	"El afregnes efter forbrug"
+];
 ---
 
 <Layout title="Diernæs Strandby 98 - Sommerhus udlejning">
@@ -10,23 +35,18 @@ import Layout from '../layouts/main.astro';
 	</header>
 
 	<!-- Contact Info -->
-	<section class="bg-card p-6 rounded-lg shadow-sm mb-8">
-		<h2 class="text-2xl font-semibold mb-4">Kontakt os</h2>
-		<div class="space-y-2">
-			<p class="flex items-center gap-2">
-				<span class="font-medium">E-mail:</span>
-				<a href="mailto:lejenkold@gmail.com" class="text-primary hover:underline">lejenkold@gmail.com</a>
-			</p>
-			<p class="flex items-center gap-2">
-				<span class="font-medium">Telefon:</span>
-				<a href="tel:53805836" class="text-primary hover:underline">53 80 58 36</a>
-			</p>
-		</div>
-	</section>
+	<Section>
+		<Card>
+			<CardContent>
+				<SectionHeader class="mb-4">Kontakt os</SectionHeader>
+				<ContactInfo email="lejenkold@gmail.com" phone="53 80 58 36" />
+			</CardContent>
+		</Card>
+	</Section>
 
 	<!-- Description -->
-	<section class="mb-8">
-		<h2 class="text-2xl font-semibold mb-6">Beskrivelse</h2>
+	<Section>
+		<SectionHeader>Beskrivelse</SectionHeader>
 		<div class="prose prose-lg max-w-none">
 			<p class="mb-4">
 				Lille, privat og hyggeligt sommerhus, beliggende ved Diernæs bugt, 6100 Haderslev, udlejes.
@@ -34,28 +54,8 @@ import Layout from '../layouts/main.astro';
 			</p>
 			
 			<div class="grid md:grid-cols-2 gap-6 my-6">
-				<div class="bg-muted/50 p-4 rounded-lg">
-					<h3 class="font-semibold mb-3">Faciliteter</h3>
-					<ul class="space-y-1 text-sm">
-						<li>• Rummelig udestue med sofa og spisebord</li>
-						<li>• Soveværelse med dobbeltseng</li>
-						<li>• Toilet med brus</li>
-						<li>• Køkken med mikroovn, kølefryseskab og opvaskemaskine</li>
-						<li>• Stue med sovesofa 140×200</li>
-						<li>• 4 sovepladser + 2 i anneks</li>
-					</ul>
-				</div>
-				
-				<div class="bg-muted/50 p-4 rounded-lg">
-					<h3 class="font-semibold mb-3">Udstyr & Service</h3>
-					<ul class="space-y-1 text-sm">
-						<li>• 50/50 bredbånd</li>
-						<li>• Varmepumpe/aircon</li>
-						<li>• Boxer TV lille pakke</li>
-						<li>• Strøm tændt ved ankomst</li>
-						<li>• El afregnes efter forbrug</li>
-					</ul>
-				</div>
+				<FeatureList title="Faciliteter" items={facilities} />
+				<FeatureList title="Udstyr & Service" items={equipment} />
 			</div>
 
 			<div class="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg my-4">
@@ -66,38 +66,36 @@ import Layout from '../layouts/main.astro';
 				</p>
 			</div>
 		</div>
-	</section>
+	</Section>
 
 	<!-- Pricing -->
-	<section class="mb-8">
-		<h2 class="text-2xl font-semibold mb-6">Priser</h2>
+	<Section>
+		<SectionHeader>Priser</SectionHeader>
 		<div class="grid md:grid-cols-3 gap-4">
-			<div class="bg-card p-6 rounded-lg border border-border">
-				<h3 class="font-semibold text-lg mb-2 text-green-600">Høj Sæson</h3>
-				<p class="text-sm text-muted-foreground mb-2">Uge 26-32</p>
-				<p class="text-2xl font-bold">3.500 Kr.</p>
-				<p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
-			</div>
-			
-			<div class="bg-card p-6 rounded-lg border border-border">
-				<h3 class="font-semibold text-lg mb-2 text-orange-600">Mellem Sæson</h3>
-				<p class="text-sm text-muted-foreground mb-2">Uge 33-36, 18-25, 7, 42</p>
-				<p class="text-2xl font-bold">3.000 Kr.</p>
-				<p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
-			</div>
-			
-			<div class="bg-card p-6 rounded-lg border border-border">
-				<h3 class="font-semibold text-lg mb-2 text-blue-600">Lav Sæson</h3>
-				<p class="text-sm text-muted-foreground mb-2">Øvrige uger</p>
-				<p class="text-2xl font-bold">2.000 Kr.</p>
-				<p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
-			</div>
+			<PriceCard 
+				title="Høj Sæson"
+				period="Uge 26-32"
+				price="3.500 Kr."
+				colorClass="text-green-600"
+			/>
+			<PriceCard 
+				title="Mellem Sæson"
+				period="Uge 33-36, 18-25, 7, 42"
+				price="3.000 Kr."
+				colorClass="text-orange-600"
+			/>
+			<PriceCard 
+				title="Lav Sæson"
+				period="Øvrige uger"
+				price="2.000 Kr."
+				colorClass="text-blue-600"
+			/>
 		</div>
 		
 		<div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
 			<p class="font-semibold">Anneks: +1.000 Kr. pr. uge</p>
 		</div>
-	</section>
+	</Section>
 
 	<!-- Footer -->
 	<footer class="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">

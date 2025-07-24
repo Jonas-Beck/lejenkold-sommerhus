@@ -1,0 +1,22 @@
+---
+import Card from './ui/Card.astro';
+import CardContent from './ui/CardContent.astro';
+
+export interface Props {
+  title: string;
+  period: string;
+  price: string;
+  colorClass: string;
+}
+
+const { title, period, price, colorClass } = Astro.props;
+---
+
+<Card>
+  <CardContent>
+    <h3 class={`font-semibold text-lg mb-2 ${colorClass}`}>{title}</h3>
+    <p class="text-sm text-muted-foreground mb-2">{period}</p>
+    <p class="text-2xl font-bold">{price}</p>
+    <p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
+  </CardContent>
+</Card>
