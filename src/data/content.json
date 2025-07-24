@@ -69,68 +69,122 @@
   },
   "images": {
     "hero": {
-      "src": "/images/hero-house-front.jpg",
+      "src": "/images/front.jpg",
       "alt": "Diernæs Strandby 98 - Sommerhus facade"
     },
     "gallery": [
       {
-        "src": "/images/exterior-1.jpg",
+        "src": "/images/outside.jpg",
+        "thumbnail": "/images/thumbs/outside-thumb.jpg",
         "alt": "Sommerhuset set udefra",
         "category": "Udvendigt"
       },
       {
-        "src": "/images/exterior-1.jpg",
-        "alt": "Haveudsigt fra sommerhuset",
+        "src": "/images/outside1.jpg",
+        "thumbnail": "/images/thumbs/outside1-thumb.jpg",
+        "alt": "Sommerhuset fra anden vinkel",
         "category": "Udvendigt"
       },
       {
-        "src": "/images/exterior-1.jpg",
-        "alt": "Terrasse og udendørs område",
+        "src": "/images/outside2.jpg",
+        "thumbnail": "/images/thumbs/outside2-thumb.jpg",
+        "alt": "Hus og have",
         "category": "Udvendigt"
       },
       {
-        "src": "/images/exterior-1.jpg",
-        "alt": "Parkeringsplads",
+        "src": "/images/outside3.jpg",
+        "thumbnail": "/images/thumbs/outside3-thumb.jpg",
+        "alt": "Udendørs område",
         "category": "Udvendigt"
       },
       {
-        "src": "/images/living-room.jpg",
+        "src": "/images/terrace1.jpg",
+        "thumbnail": "/images/thumbs/terrace1-thumb.jpg",
+        "alt": "Terrasse område 1",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/terrace2.jpg",
+        "thumbnail": "/images/thumbs/terrace2-thumb.jpg",
+        "alt": "Terrasse område 2",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/terrace3.jpg",
+        "thumbnail": "/images/thumbs/terrace3-thumb.jpg",
+        "alt": "Terrasse område 3",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/livingroom.jpg",
+        "thumbnail": "/images/thumbs/livingroom-thumb.jpg",
         "alt": "Stue med sovesofa",
         "category": "Indvendigt"
       },
       {
+        "src": "/images/livingroom1.jpg",
+        "thumbnail": "/images/thumbs/livingroom1-thumb.jpg",
+        "alt": "Stue fra anden vinkel",
+        "category": "Indvendigt"
+      },
+      {
         "src": "/images/kitchen.jpg",
+        "thumbnail": "/images/thumbs/kitchen-thumb.jpg",
         "alt": "Køkken med spisebord",
         "category": "Indvendigt"
       },
       {
-        "src": "/images/bedroom.jpg",
+        "src": "/images/kitchen1.jpg",
+        "thumbnail": "/images/thumbs/kitchen1-thumb.jpg",
+        "alt": "Køkken fra anden vinkel",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/bedroom1.jpg",
+        "thumbnail": "/images/thumbs/bedroom1-thumb.jpg",
         "alt": "Soveværelse med dobbeltseng",
         "category": "Indvendigt"
       },
       {
-        "src": "/images/living-room.jpg",
+        "src": "/images/bathroom.jpg",
+        "thumbnail": "/images/thumbs/bathroom-thumb.jpg",
         "alt": "Toilet med brus",
         "category": "Indvendigt"
       },
       {
-        "src": "/images/living-room.jpg",
+        "src": "/images/bathroom1.jpg",
+        "thumbnail": "/images/thumbs/bathroom1-thumb.jpg",
+        "alt": "Badeværelse detaljer",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/udestue.jpg",
+        "thumbnail": "/images/thumbs/udestue-thumb.jpg",
         "alt": "Udestue med spisebord",
         "category": "Indvendigt"
       },
       {
-        "src": "/images/bedroom.jpg",
+        "src": "/images/udestue1.jpg",
+        "thumbnail": "/images/thumbs/udestue1-thumb.jpg",
+        "alt": "Udestue fra anden vinkel",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/annex.jpg",
+        "thumbnail": "/images/thumbs/annex-thumb.jpg",
         "alt": "Anneks med dobbeltseng",
         "category": "Anneks"
       },
       {
-        "src": "/images/exterior-1.jpg",
-        "alt": "Strand og omgivelser",
-        "category": "Omgivelser"
+        "src": "/images/annex1.jpg",
+        "thumbnail": "/images/thumbs/annex1-thumb.jpg",
+        "alt": "Anneks fra anden vinkel",
+        "category": "Anneks"
       },
       {
-        "src": "/images/living-room.jpg",
-        "alt": "Natur omkring sommerhuset",
+        "src": "/images/beach.jpg",
+        "thumbnail": "/images/thumbs/beach-thumb.jpg",
+        "alt": "Strand og omgivelser",
         "category": "Omgivelser"
       }
     ]
