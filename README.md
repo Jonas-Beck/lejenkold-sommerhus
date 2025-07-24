@@ -1,13 +1,54 @@
-# Astro with Tailwind
+# Lejenkold Sommerhus Website
 
-```sh
-bun create astro@latest -- --template with-tailwindcss
+## 📍 Project Overview
+
+Modern summer house rental website for **Diernæs Strandby 98** in Haderslev, Denmark. Built with Astro, React, and Tailwind CSS for optimal performance and user experience.
+
+## 🏗️ Tech Stack
+
+- **Framework**: Astro 5.x with React integration
+- **Styling**: Tailwind CSS with shadcn-style components
+- **Image Gallery**: React lightbox with pagination
+- **Maps**: Embedded Google Maps
+- **TypeScript**: Full type safety
+
+## 📱 Key Features
+
+- **Responsive Design**: Mobile-first with desktop sidebar
+- **Image Gallery**: Handles 28+ images with categories and pagination
+- **Contact Integration**: Email, phone, address with embedded map
+- **Performance Optimized**: Lazy loading, efficient pagination
+- **Component-Based**: Reusable Astro and React components
+
+## 🎯 Content Structure
+
+- Hero image and property title
+- Property description with features
+- Seasonal pricing (High/Medium/Low season)
+- Contact information and location map
+- Categorized image gallery (Interior/Exterior/Surroundings)
+
+## 🚀 Quick Start
+
+```bash
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+## 📁 Key Components
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+- `ContactSidebar.astro` - Desktop sticky sidebar
+- `ContactCard.astro` - Mobile contact info
+- `ImageGallery.tsx` - React gallery with lightbox
+- `GoogleMaps.astro` - Embedded location map
+- `PriceCard.astro` - Seasonal pricing cards
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+## 📸 Images
+
+Replace placeholders in `public/images/` with actual property photos. Update `galleryImages` array in `src/pages/index.astro` with real image paths and categories.
+
+## 🎨 Layout
+
+- **Mobile**: Single column, contact after pricing
+- **Desktop**: Two-column with sticky sidebar
+- **Content Flow**: Description → Pricing → Contact → Gallery → Location
