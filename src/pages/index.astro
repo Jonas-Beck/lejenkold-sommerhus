@@ -2,13 +2,13 @@
 import Layout from '../layouts/main.astro';
 import Section from '../components/Section.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import ContactInfo from '../components/ContactInfo.astro';
 import FeatureList from '../components/FeatureList.astro';
 import PriceCard from '../components/PriceCard.astro';
-import Card from '../components/ui/Card.astro';
-import CardContent from '../components/ui/CardContent.astro';
 import HeroImage from '../components/HeroImage.astro';
 import ImageGallery from '../components/ImageGallery.tsx';
+import ContactSidebar from '../components/ContactSidebar.astro';
+import ContactCard from '../components/ContactCard.astro';
+import LocationSection from '../components/LocationSection.astro';
 // import { heroImage, galleryImages } from '../data/images.ts';
 
 // Image data - replace with actual paths when you upload photos
@@ -112,79 +112,101 @@ const equipment = [
 		<HeroImage src={heroImage.src} alt={heroImage.alt} />
 	</header>
 
-	<!-- Contact Info -->
-	<Section>
-		<Card>
-			<CardContent>
-				<SectionHeader class="mb-4">Kontakt os</SectionHeader>
-				<ContactInfo email="lejenkold@gmail.com" phone="53 80 58 36" />
-			</CardContent>
-		</Card>
-	</Section>
+	<!-- Main Content with Sidebar Layout -->
+	<div class="grid lg:grid-cols-3 gap-8">
+		<!-- Main Content -->
+		<div class="lg:col-span-2 space-y-8">
+			<!-- Description -->
+			<Section class="mb-0">
+				<SectionHeader>Beskrivelse</SectionHeader>
+				<div class="prose prose-lg max-w-none">
+					<p class="mb-4">
+						Lille, privat og hyggeligt sommerhus, beliggende ved Diernæs bugt, 6100 Haderslev, udlejes.
+						<strong>Gåafstand til stranden (300m).</strong>
+					</p>
+					
+					<div class="grid md:grid-cols-2 gap-6 my-6">
+						<FeatureList title="Faciliteter" items={facilities} />
+						<FeatureList title="Udstyr & Service" items={equipment} />
+					</div>
 
-	<!-- Description -->
-	<Section>
-		<SectionHeader>Beskrivelse</SectionHeader>
-		<div class="prose prose-lg max-w-none">
-			<p class="mb-4">
-				Lille, privat og hyggeligt sommerhus, beliggende ved Diernæs bugt, 6100 Haderslev, udlejes.
-				<strong>Gåafstand til stranden (300m).</strong>
-			</p>
-			
-			<div class="grid md:grid-cols-2 gap-6 my-6">
-				<FeatureList title="Faciliteter" items={facilities} />
-				<FeatureList title="Udstyr & Service" items={equipment} />
+					<div class="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg my-4">
+						<h4 class="font-semibold mb-2">Anneks</h4>
+						<p class="text-sm">
+							Der kan lejes anneks med dobbeltseng 180x200 sammen med huset. 
+							Denne lejes naturligvis kun ud til sommerhuslejer, og er således tom hvis ikke I ønsker at benytte jer af denne.
+						</p>
+					</div>
+				</div>
+			</Section>
+
+			<!-- Pricing -->
+			<Section class="mb-0">
+				<SectionHeader>Priser</SectionHeader>
+				<div class="grid md:grid-cols-3 gap-4">
+					<PriceCard 
+						title="Høj Sæson"
+						period="Uge 26-32"
+						price="3.500 Kr."
+						colorClass="text-green-600"
+					/>
+					<PriceCard 
+						title="Mellem Sæson"
+						period="Uge 33-36, 18-25, 7, 42"
+						price="3.000 Kr."
+						colorClass="text-orange-600"
+					/>
+					<PriceCard 
+						title="Lav Sæson"
+						period="Øvrige uger"
+						price="2.000 Kr."
+						colorClass="text-blue-600"
+					/>
+				</div>
+				
+				<div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
+					<p class="font-semibold">Anneks: +1.000 Kr. pr. uge</p>
+				</div>
+			</Section>
+
+			<!-- Mobile Contact Info (shown only on mobile, after pricing) -->
+			<!-- Option 1: Just basic contact info -->
+			<div class="lg:hidden">
+				<ContactCard 
+					email="lejenkold@gmail.com"
+					phone="53 80 58 36"
+					address="Diernæs Strandby 98, 6100 Haderslev"
+				/>
 			</div>
 
-			<div class="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg my-4">
-				<h4 class="font-semibold mb-2">Anneks</h4>
-				<p class="text-sm">
-					Der kan lejes anneks med dobbeltseng 180x200 sammen med huset. 
-					Denne lejes naturligvis kun ud til sommerhuslejer, og er således tom hvis ikke I ønsker at benytte jer af denne.
-				</p>
+			<!-- Image Gallery -->
+			<Section class="mb-0">
+				<ImageGallery 
+					images={galleryImages} 
+					title="Billeder af sommerhuset" 
+					showCategories={true}
+					imagesPerPage={8}
+					client:load 
+				/>
+			</Section>
+
+			<!-- Location Section (for mobile, after images) -->
+			<div class="lg:hidden">
+				<LocationSection address="Diernæs Strandby 98, 6100 Haderslev" />
 			</div>
 		</div>
-	</Section>
 
-	<!-- Pricing -->
-	<Section>
-		<SectionHeader>Priser</SectionHeader>
-		<div class="grid md:grid-cols-3 gap-4">
-			<PriceCard 
-				title="Høj Sæson"
-				period="Uge 26-32"
-				price="3.500 Kr."
-				colorClass="text-green-600"
-			/>
-			<PriceCard 
-				title="Mellem Sæson"
-				period="Uge 33-36, 18-25, 7, 42"
-				price="3.000 Kr."
-				colorClass="text-orange-600"
-			/>
-			<PriceCard 
-				title="Lav Sæson"
-				period="Øvrige uger"
-				price="2.000 Kr."
-				colorClass="text-blue-600"
-			/>
+		<!-- Sidebar (hidden on mobile) -->
+		<div class="hidden lg:block lg:col-span-1">
+			<div class="sticky top-8">
+				<ContactSidebar 
+					email="lejenkold@gmail.com"
+					phone="53 80 58 36"
+					address="Diernæs Strandby 98, 6100 Haderslev"
+				/>
+			</div>
 		</div>
-		
-		<div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
-			<p class="font-semibold">Anneks: +1.000 Kr. pr. uge</p>
-		</div>
-	</Section>
-
-	<!-- Image Gallery -->
-	<Section>
-		<ImageGallery 
-			images={galleryImages} 
-			title="Billeder af sommerhuset" 
-			showCategories={true}
-			imagesPerPage={8}
-			client:load 
-		/>
-	</Section>
+	</div>
 
 	<!-- Footer -->
 	<footer class="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">

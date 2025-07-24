@@ -1,0 +1,27 @@
+---
+import Section from './Section.astro';
+import SectionHeader from './SectionHeader.astro';
+import GoogleMaps from './GoogleMaps.astro';
+
+export interface Props {
+  address: string;
+  class?: string;
+}
+
+const { address, class: className = "" } = Astro.props;
+---
+
+<Section class={className}>
+  <SectionHeader>Lokation</SectionHeader>
+  <GoogleMaps 
+    address={address}
+    title=""
+    height="h-64 md:h-80"
+  />
+  <div class="mt-4 text-center">
+    <p class="text-sm text-muted-foreground">
+      <strong>{address}</strong><br>
+      Gåafstand til stranden: 300m
+    </p>
+  </div>
+</Section>
