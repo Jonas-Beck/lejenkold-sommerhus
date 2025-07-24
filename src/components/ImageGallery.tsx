@@ -179,36 +179,45 @@ export default function ImageGallery({
         index={photoIndex}
         slides={lightboxImages}
         animation={{ fade: 300 }}
-        controller={{ closeOnBackdropClick: true }}
+        controller={{
+          closeOnBackdropClick: true,
+        }}
         carousel={{
           finite: false,
           preload: 2,
         }}
-        render={{
-          buttonNext: () => (
-            <div className="text-white">
+        toolbar={{
+          buttons: [
+            <button
+              key="prev"
+              className="yarl__button"
+              type="button"
+              aria-label="Previous image"
+              onClick={() => setPhotoIndex((prev) => Math.max(0, prev - 1))}
+              style={{
+                position: "absolute",
+                left: "20px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 1000,
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                border: "2px solid rgba(255, 255, 255, 0.3)",
+                color: "white",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
+            >
               <svg
-                className="w-6 h-6"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-          ),
-          buttonPrev: () => (
-            <div className="text-white">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
               >
                 <path
                   strokeLinecap="round"
@@ -217,8 +226,54 @@ export default function ImageGallery({
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-            </div>
-          ),
+            </button>,
+            <button
+              key="next"
+              className="yarl__button"
+              type="button"
+              aria-label="Next image"
+              onClick={() =>
+                setPhotoIndex((prev) =>
+                  Math.min(lightboxImages.length - 1, prev + 1),
+                )
+              }
+              style={{
+                position: "absolute",
+                right: "20px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 1000,
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                border: "2px solid rgba(255, 255, 255, 0.3)",
+                color: "white",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>,
+          ],
+        }}
+        styles={{
+          container: { backgroundColor: "rgba(0, 0, 0, 0.9)" },
         }}
       />
     </div>
