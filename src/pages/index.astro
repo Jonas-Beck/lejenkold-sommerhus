@@ -1,25 +1,106 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Layout from '../layouts/main.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<Layout title="Diernæs Strandby 98 - Sommerhus udlejning">
+	<!-- Header -->
+	<header class="text-center mb-12">
+		<h1 class="text-4xl font-bold text-foreground mb-4">Diernæs Strandby 98</h1>
+		<p class="text-xl text-muted-foreground">Lille, privat og hyggeligt sommerhus ved Diernæs bugt</p>
+	</header>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+	<!-- Contact Info -->
+	<section class="bg-card p-6 rounded-lg shadow-sm mb-8">
+		<h2 class="text-2xl font-semibold mb-4">Kontakt os</h2>
+		<div class="space-y-2">
+			<p class="flex items-center gap-2">
+				<span class="font-medium">E-mail:</span>
+				<a href="mailto:lejenkold@gmail.com" class="text-primary hover:underline">lejenkold@gmail.com</a>
+			</p>
+			<p class="flex items-center gap-2">
+				<span class="font-medium">Telefon:</span>
+				<a href="tel:53805836" class="text-primary hover:underline">53 80 58 36</a>
+			</p>
 		</div>
-	</body>
-</html>
+	</section>
+
+	<!-- Description -->
+	<section class="mb-8">
+		<h2 class="text-2xl font-semibold mb-6">Beskrivelse</h2>
+		<div class="prose prose-lg max-w-none">
+			<p class="mb-4">
+				Lille, privat og hyggeligt sommerhus, beliggende ved Diernæs bugt, 6100 Haderslev, udlejes.
+				<strong>Gåafstand til stranden (300m).</strong>
+			</p>
+			
+			<div class="grid md:grid-cols-2 gap-6 my-6">
+				<div class="bg-muted/50 p-4 rounded-lg">
+					<h3 class="font-semibold mb-3">Faciliteter</h3>
+					<ul class="space-y-1 text-sm">
+						<li>• Rummelig udestue med sofa og spisebord</li>
+						<li>• Soveværelse med dobbeltseng</li>
+						<li>• Toilet med brus</li>
+						<li>• Køkken med mikroovn, kølefryseskab og opvaskemaskine</li>
+						<li>• Stue med sovesofa 140×200</li>
+						<li>• 4 sovepladser + 2 i anneks</li>
+					</ul>
+				</div>
+				
+				<div class="bg-muted/50 p-4 rounded-lg">
+					<h3 class="font-semibold mb-3">Udstyr & Service</h3>
+					<ul class="space-y-1 text-sm">
+						<li>• 50/50 bredbånd</li>
+						<li>• Varmepumpe/aircon</li>
+						<li>• Boxer TV lille pakke</li>
+						<li>• Strøm tændt ved ankomst</li>
+						<li>• El afregnes efter forbrug</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg my-4">
+				<h4 class="font-semibold mb-2">Anneks</h4>
+				<p class="text-sm">
+					Der kan lejes anneks med dobbeltseng 180x200 sammen med huset. 
+					Denne lejes naturligvis kun ud til sommerhuslejer, og er således tom hvis ikke I ønsker at benytte jer af denne.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pricing -->
+	<section class="mb-8">
+		<h2 class="text-2xl font-semibold mb-6">Priser</h2>
+		<div class="grid md:grid-cols-3 gap-4">
+			<div class="bg-card p-6 rounded-lg border border-border">
+				<h3 class="font-semibold text-lg mb-2 text-green-600">Høj Sæson</h3>
+				<p class="text-sm text-muted-foreground mb-2">Uge 26-32</p>
+				<p class="text-2xl font-bold">3.500 Kr.</p>
+				<p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
+			</div>
+			
+			<div class="bg-card p-6 rounded-lg border border-border">
+				<h3 class="font-semibold text-lg mb-2 text-orange-600">Mellem Sæson</h3>
+				<p class="text-sm text-muted-foreground mb-2">Uge 33-36, 18-25, 7, 42</p>
+				<p class="text-2xl font-bold">3.000 Kr.</p>
+				<p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
+			</div>
+			
+			<div class="bg-card p-6 rounded-lg border border-border">
+				<h3 class="font-semibold text-lg mb-2 text-blue-600">Lav Sæson</h3>
+				<p class="text-sm text-muted-foreground mb-2">Øvrige uger</p>
+				<p class="text-2xl font-bold">2.000 Kr.</p>
+				<p class="text-sm text-muted-foreground">pr. uge plus forbrug</p>
+			</div>
+		</div>
+		
+		<div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
+			<p class="font-semibold">Anneks: +1.000 Kr. pr. uge</p>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+		<p>&copy; 2024 Lejenkold - Diernæs Strandby 98</p>
+	</footer>
+</Layout>
