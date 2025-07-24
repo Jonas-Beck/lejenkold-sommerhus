@@ -7,6 +7,81 @@ import FeatureList from '../components/FeatureList.astro';
 import PriceCard from '../components/PriceCard.astro';
 import Card from '../components/ui/Card.astro';
 import CardContent from '../components/ui/CardContent.astro';
+import HeroImage from '../components/HeroImage.astro';
+import ImageGallery from '../components/ImageGallery.tsx';
+// import { heroImage, galleryImages } from '../data/images.ts';
+
+// Image data - replace with actual paths when you upload photos
+const heroImage = {
+  src: "/images/hero-house-front.jpg",
+  alt: "Diernæs Strandby 98 - Sommerhus facade"
+};
+
+const galleryImages = [
+  // Exterior
+  {
+    src: "/images/exterior-1.jpg",
+    alt: "Sommerhuset set udefra",
+    category: "Udvendigt"
+  },
+  {
+    src: "/images/exterior-1.jpg",
+    alt: "Haveudsigt fra sommerhuset",
+    category: "Udvendigt"
+  },
+  {
+    src: "/images/exterior-1.jpg",
+    alt: "Terrasse og udendørs område",
+    category: "Udvendigt"
+  },
+  {
+    src: "/images/exterior-1.jpg",
+    alt: "Parkeringsplads",
+    category: "Udvendigt"
+  },
+  // Interior
+  {
+    src: "/images/living-room.jpg",
+    alt: "Stue med sovesofa",
+    category: "Indvendigt"
+  },
+  {
+    src: "/images/kitchen.jpg",
+    alt: "Køkken med spisebord",
+    category: "Indvendigt"
+  },
+  {
+    src: "/images/bedroom.jpg",
+    alt: "Soveværelse med dobbeltseng",
+    category: "Indvendigt"
+  },
+  {
+    src: "/images/living-room.jpg",
+    alt: "Toilet med brus",
+    category: "Indvendigt"
+  },
+  {
+    src: "/images/living-room.jpg",
+    alt: "Udestue med spisebord",
+    category: "Indvendigt"
+  },
+  {
+    src: "/images/bedroom.jpg",
+    alt: "Anneks med dobbeltseng",
+    category: "Anneks"
+  },
+  // Add more sample images to demonstrate pagination
+  {
+    src: "/images/exterior-1.jpg",
+    alt: "Strand og omgivelser",
+    category: "Omgivelser"
+  },
+  {
+    src: "/images/living-room.jpg",
+    alt: "Natur omkring sommerhuset",
+    category: "Omgivelser"
+  }
+];
 
 // Data for the components
 const facilities = [
@@ -29,9 +104,12 @@ const equipment = [
 
 <Layout title="Diernæs Strandby 98 - Sommerhus udlejning">
 	<!-- Header -->
-	<header class="text-center mb-12">
+	<header class="text-center mb-8">
 		<h1 class="text-4xl font-bold text-foreground mb-4">Diernæs Strandby 98</h1>
-		<p class="text-xl text-muted-foreground">Lille, privat og hyggeligt sommerhus ved Diernæs bugt</p>
+		<p class="text-xl text-muted-foreground mb-8">Lille, privat og hyggeligt sommerhus ved Diernæs bugt</p>
+		
+		<!-- Hero Image -->
+		<HeroImage src={heroImage.src} alt={heroImage.alt} />
 	</header>
 
 	<!-- Contact Info -->
@@ -95,6 +173,17 @@ const equipment = [
 		<div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
 			<p class="font-semibold">Anneks: +1.000 Kr. pr. uge</p>
 		</div>
+	</Section>
+
+	<!-- Image Gallery -->
+	<Section>
+		<ImageGallery 
+			images={galleryImages} 
+			title="Billeder af sommerhuset" 
+			showCategories={true}
+			imagesPerPage={8}
+			client:load 
+		/>
 	</Section>
 
 	<!-- Footer -->

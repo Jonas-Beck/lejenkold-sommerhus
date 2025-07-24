@@ -1,0 +1,10 @@
+<!-- Placeholder for hero image - replace with actual house front photo -->
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#e5e7eb"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Arial" font-size="24" fill="#6b7280">
+    Hero Image - House Front
+  </text>
+  <text x="400" y="230" text-anchor="middle" font-family="Arial" font-size="16" fill="#9ca3af">
+    800 x 400 px
+  </text>
+</svg>

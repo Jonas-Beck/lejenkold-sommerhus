@@ -1,0 +1,7 @@
+<!-- Placeholder for bedroom -->
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#fecaca"/>
+  <text x="300" y="200" text-anchor="middle" font-family="Arial" font-size="20" fill="#dc2626">
+    Bedroom
+  </text>
+</svg>

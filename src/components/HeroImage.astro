@@ -1,0 +1,19 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+}
+
+const { src, alt, class: className = "" } = Astro.props;
+---
+
+<div class={`relative w-full h-64 md:h-96 lg:h-[32rem] overflow-hidden rounded-lg shadow-lg mb-8 ${className}`}>
+  <img 
+    src={src} 
+    alt={alt}
+    class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+    loading="eager"
+  />
+  <div class="absolute inset-0 bg-black/20 rounded-lg"></div>
+</div>
