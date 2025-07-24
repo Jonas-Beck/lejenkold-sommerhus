@@ -1,0 +1,138 @@
+{
+  "property": {
+    "title": "Diernæs Strandby 98",
+    "subtitle": "Lille, privat og hyggeligt sommerhus ved Diernæs bugt",
+    "address": "Diernæs Strandby 98, 6100 Haderslev",
+    "location": "Diernæs bugt, 6100 Haderslev"
+  },
+  "contact": {
+    "email": "lejenkold@gmail.com",
+    "phone": "53 80 58 36",
+    "phoneFormatted": "53 80 58 36"
+  },
+  "description": {
+    "main": "Lille, privat og hyggeligt sommerhus, beliggende ved Diernæs bugt, 6100 Haderslev, udlejes.",
+    "highlight": "Gåafstand til stranden (300m).",
+    "annex": "Der kan lejes anneks med dobbeltseng 180x200 sammen med huset. Denne lejes naturligvis kun ud til sommerhuslejer, og er således tom hvis ikke I ønsker at benytte jer af denne."
+  },
+  "features": {
+    "facilities": [
+      "Rummelig udestue med sofa og spisebord",
+      "Soveværelse med dobbeltseng",
+      "Toilet med brus",
+      "Køkken med mikroovn, kølefryseskab og opvaskemaskine",
+      "Stue med sovesofa 140×200",
+      "4 sovepladser + 2 i anneks"
+    ],
+    "equipment": [
+      "50/50 bredbånd",
+      "Varmepumpe/aircon",
+      "Boxer TV lille pakke",
+      "Strøm tændt ved ankomst",
+      "El afregnes efter forbrug"
+    ]
+  },
+  "pricing": {
+    "seasons": [
+      {
+        "name": "Høj Sæson",
+        "period": "Uge 26-32",
+        "price": "3.500 Kr.",
+        "colorClass": "text-green-600"
+      },
+      {
+        "name": "Mellem Sæson",
+        "period": "Uge 33-36, 18-25, 7, 42",
+        "price": "3.000 Kr.",
+        "colorClass": "text-orange-600"
+      },
+      {
+        "name": "Lav Sæson",
+        "period": "Øvrige uger",
+        "price": "2.000 Kr.",
+        "colorClass": "text-blue-600"
+      }
+    ],
+    "extras": {
+      "annex": {
+        "name": "Anneks",
+        "price": "+1.000 Kr. pr. uge"
+      }
+    },
+    "note": "Alle priser er pr uge priser plus forbrug."
+  },
+  "quickInfo": {
+    "beachDistance": "300m",
+    "sleepingCapacity": "4 + 2 (anneks)",
+    "wifi": "50/50 Mbit",
+    "parking": "Ja"
+  },
+  "images": {
+    "hero": {
+      "src": "/images/hero-house-front.jpg",
+      "alt": "Diernæs Strandby 98 - Sommerhus facade"
+    },
+    "gallery": [
+      {
+        "src": "/images/exterior-1.jpg",
+        "alt": "Sommerhuset set udefra",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/exterior-1.jpg",
+        "alt": "Haveudsigt fra sommerhuset",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/exterior-1.jpg",
+        "alt": "Terrasse og udendørs område",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/exterior-1.jpg",
+        "alt": "Parkeringsplads",
+        "category": "Udvendigt"
+      },
+      {
+        "src": "/images/living-room.jpg",
+        "alt": "Stue med sovesofa",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/kitchen.jpg",
+        "alt": "Køkken med spisebord",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/bedroom.jpg",
+        "alt": "Soveværelse med dobbeltseng",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/living-room.jpg",
+        "alt": "Toilet med brus",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/living-room.jpg",
+        "alt": "Udestue med spisebord",
+        "category": "Indvendigt"
+      },
+      {
+        "src": "/images/bedroom.jpg",
+        "alt": "Anneks med dobbeltseng",
+        "category": "Anneks"
+      },
+      {
+        "src": "/images/exterior-1.jpg",
+        "alt": "Strand og omgivelser",
+        "category": "Omgivelser"
+      },
+      {
+        "src": "/images/living-room.jpg",
+        "alt": "Natur omkring sommerhuset",
+        "category": "Omgivelser"
+      }
+    ]
+  }
+}

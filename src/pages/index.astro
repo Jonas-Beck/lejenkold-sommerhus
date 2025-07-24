@@ -9,107 +9,22 @@ import ImageGallery from '../components/ImageGallery.tsx';
 import ContactSidebar from '../components/ContactSidebar.astro';
 import ContactCard from '../components/ContactCard.astro';
 import LocationSection from '../components/LocationSection.astro';
-// import { heroImage, galleryImages } from '../data/images.ts';
 
-// Image data - replace with actual paths when you upload photos
-const heroImage = {
-  src: "/images/hero-house-front.jpg",
-  alt: "Diernæs Strandby 98 - Sommerhus facade"
-};
+// Import content data
+import contentData from '../data/content.json';
 
-const galleryImages = [
-  // Exterior
-  {
-    src: "/images/exterior-1.jpg",
-    alt: "Sommerhuset set udefra",
-    category: "Udvendigt"
-  },
-  {
-    src: "/images/exterior-1.jpg",
-    alt: "Haveudsigt fra sommerhuset",
-    category: "Udvendigt"
-  },
-  {
-    src: "/images/exterior-1.jpg",
-    alt: "Terrasse og udendørs område",
-    category: "Udvendigt"
-  },
-  {
-    src: "/images/exterior-1.jpg",
-    alt: "Parkeringsplads",
-    category: "Udvendigt"
-  },
-  // Interior
-  {
-    src: "/images/living-room.jpg",
-    alt: "Stue med sovesofa",
-    category: "Indvendigt"
-  },
-  {
-    src: "/images/kitchen.jpg",
-    alt: "Køkken med spisebord",
-    category: "Indvendigt"
-  },
-  {
-    src: "/images/bedroom.jpg",
-    alt: "Soveværelse med dobbeltseng",
-    category: "Indvendigt"
-  },
-  {
-    src: "/images/living-room.jpg",
-    alt: "Toilet med brus",
-    category: "Indvendigt"
-  },
-  {
-    src: "/images/living-room.jpg",
-    alt: "Udestue med spisebord",
-    category: "Indvendigt"
-  },
-  {
-    src: "/images/bedroom.jpg",
-    alt: "Anneks med dobbeltseng",
-    category: "Anneks"
-  },
-  // Add more sample images to demonstrate pagination
-  {
-    src: "/images/exterior-1.jpg",
-    alt: "Strand og omgivelser",
-    category: "Omgivelser"
-  },
-  {
-    src: "/images/living-room.jpg",
-    alt: "Natur omkring sommerhuset",
-    category: "Omgivelser"
-  }
-];
-
-// Data for the components
-const facilities = [
-	"Rummelig udestue med sofa og spisebord",
-	"Soveværelse med dobbeltseng", 
-	"Toilet med brus",
-	"Køkken med mikroovn, kølefryseskab og opvaskemaskine",
-	"Stue med sovesofa 140×200",
-	"4 sovepladser + 2 i anneks"
-];
-
-const equipment = [
-	"50/50 bredbånd",
-	"Varmepumpe/aircon", 
-	"Boxer TV lille pakke",
-	"Strøm tændt ved ankomst",
-	"El afregnes efter forbrug"
-];
+// Extract data from JSON
+const { property, contact, description, features, pricing, images } = contentData;
 ---
 
-<Layout title="Diernæs Strandby 98 - Sommerhus udlejning">
+<Layout title={`${property.title} - Sommerhus udlejning`}>
 	<!-- Header -->
 	<header class="text-center mb-8">
-		<h1 class="text-4xl font-bold text-foreground mb-4">Diernæs Strandby 98</h1>
-		<p class="text-xl text-muted-foreground mb-8">Lille, privat og hyggeligt sommerhus ved Diernæs bugt</p>
+		<h1 class="text-4xl font-bold text-foreground mb-4">{property.title}</h1>
+		<p class="text-xl text-muted-foreground mb-8">{property.subtitle}</p>
 		
 		<!-- Hero Image -->
-		<HeroImage src={heroImage.src} alt={heroImage.alt} />
+		<HeroImage src={images.hero.src} alt={images.hero.alt} />
 	</header>
 
 	<!-- Main Content with Sidebar Layout -->
@@ -121,20 +36,19 @@ const equipment = [
 				<SectionHeader>Beskrivelse</SectionHeader>
 				<div class="prose prose-lg max-w-none">
 					<p class="mb-4">
-						Lille, privat og hyggeligt sommerhus, beliggende ved Diernæs bugt, 6100 Haderslev, udlejes.
-						<strong>Gåafstand til stranden (300m).</strong>
+						{description.main}
+						<strong>{description.highlight}</strong>
 					</p>
 					
 					<div class="grid md:grid-cols-2 gap-6 my-6">
-						<FeatureList title="Faciliteter" items={facilities} />
-						<FeatureList title="Udstyr & Service" items={equipment} />
+						<FeatureList title="Faciliteter" items={features.facilities} />
+						<FeatureList title="Udstyr & Service" items={features.equipment} />
 					</div>
 
 					<div class="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg my-4">
 						<h4 class="font-semibold mb-2">Anneks</h4>
 						<p class="text-sm">
-							Der kan lejes anneks med dobbeltseng 180x200 sammen med huset. 
-							Denne lejes naturligvis kun ud til sommerhuslejer, og er således tom hvis ikke I ønsker at benytte jer af denne.
+							{description.annex}
 						</p>
 					</div>
 				</div>
@@ -144,45 +58,34 @@ const equipment = [
 			<Section class="mb-0">
 				<SectionHeader>Priser</SectionHeader>
 				<div class="grid md:grid-cols-3 gap-4">
-					<PriceCard 
-						title="Høj Sæson"
-						period="Uge 26-32"
-						price="3.500 Kr."
-						colorClass="text-green-600"
-					/>
-					<PriceCard 
-						title="Mellem Sæson"
-						period="Uge 33-36, 18-25, 7, 42"
-						price="3.000 Kr."
-						colorClass="text-orange-600"
-					/>
-					<PriceCard 
-						title="Lav Sæson"
-						period="Øvrige uger"
-						price="2.000 Kr."
-						colorClass="text-blue-600"
-					/>
+					{pricing.seasons.map((season) => (
+						<PriceCard 
+							title={season.name}
+							period={season.period}
+							price={season.price}
+							colorClass={season.colorClass}
+						/>
+					))}
 				</div>
 				
 				<div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
-					<p class="font-semibold">Anneks: +1.000 Kr. pr. uge</p>
+					<p class="font-semibold">{pricing.extras.annex.name}: {pricing.extras.annex.price}</p>
 				</div>
 			</Section>
 
 			<!-- Mobile Contact Info (shown only on mobile, after pricing) -->
-			<!-- Option 1: Just basic contact info -->
 			<div class="lg:hidden">
 				<ContactCard 
-					email="lejenkold@gmail.com"
-					phone="53 80 58 36"
-					address="Diernæs Strandby 98, 6100 Haderslev"
+					email={contact.email}
+					phone={contact.phoneFormatted}
+					address={property.address}
 				/>
 			</div>
 
 			<!-- Image Gallery -->
 			<Section class="mb-0">
 				<ImageGallery 
-					images={galleryImages} 
+					images={images.gallery} 
 					title="Billeder af sommerhuset" 
 					showCategories={true}
 					imagesPerPage={8}
@@ -192,7 +95,7 @@ const equipment = [
 
 			<!-- Location Section (for mobile, after images) -->
 			<div class="lg:hidden">
-				<LocationSection address="Diernæs Strandby 98, 6100 Haderslev" />
+				<LocationSection address={property.address} />
 			</div>
 		</div>
 
@@ -200,9 +103,9 @@ const equipment = [
 		<div class="hidden lg:block lg:col-span-1">
 			<div class="sticky top-8">
 				<ContactSidebar 
-					email="lejenkold@gmail.com"
-					phone="53 80 58 36"
-					address="Diernæs Strandby 98, 6100 Haderslev"
+					email={contact.email}
+					phone={contact.phoneFormatted}
+					address={property.address}
 				/>
 			</div>
 		</div>
