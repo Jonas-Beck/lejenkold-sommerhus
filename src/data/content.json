@@ -21,8 +21,7 @@
       "Soveværelse med dobbeltseng",
       "Toilet med brus",
       "Køkken med mikroovn, kølefryseskab og opvaskemaskine",
-      "Stue med sovesofa 140×200",
-      "4 sovepladser + 2 i anneks"
+      "2 sovepladser + 2 i anneks"
     ],
     "equipment": [
       "50/50 bredbånd",
@@ -62,10 +61,12 @@
     "note": "Alle priser er pr uge priser plus forbrug."
   },
   "quickInfo": {
-    "beachDistance": "300m",
-    "sleepingCapacity": "4 + 2 (anneks)",
-    "wifi": "50/50 Mbit",
-    "parking": "Ja"
+    "Gåafstand til strand": "300m",
+    "Sovepladser": "2 + 2 (anneks)",
+    "Wi-Fi": "50/50 Mbit",
+    "Parkering": "Ja",
+    "Check-in": "Efter kl. 16:00",
+    "Check-out": "Før kl. 10:00"
   },
   "images": {
     "hero": {

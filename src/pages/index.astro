@@ -14,7 +14,7 @@ import LocationSection from '../components/LocationSection.astro';
 import contentData from '../data/content.json';
 
 // Extract data from JSON
-const { property, contact, description, features, pricing, images } = contentData;
+const { property, contact, description, features, pricing, images, quickInfo } = contentData;
 ---
 
 <Layout title={`${property.title} - Sommerhus udlejning`}>
@@ -79,6 +79,7 @@ const { property, contact, description, features, pricing, images } = contentDat
 					email={contact.email}
 					phone={contact.phoneFormatted}
 					address={property.address}
+					quickInfo={quickInfo}
 				/>
 			</div>
 
@@ -106,6 +107,7 @@ const { property, contact, description, features, pricing, images } = contentDat
 					email={contact.email}
 					phone={contact.phoneFormatted}
 					address={property.address}
+					quickInfo={quickInfo}
 				/>
 			</div>
 		</div>

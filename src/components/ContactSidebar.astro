@@ -8,10 +8,11 @@ export interface Props {
   email: string;
   phone: string;
   address: string;
+  quickInfo: Record<string, string>;
   class?: string;
 }
 
-const { email, phone, address, class: className = "" } = Astro.props;
+const { email, phone, address, quickInfo, class: className = "" } = Astro.props;
 ---
 
 <aside class={`space-y-6 ${className}`}>
@@ -46,22 +47,12 @@ const { email, phone, address, class: className = "" } = Astro.props;
     <CardContent>
       <h3 class="text-lg font-semibold mb-3">Hurtig info</h3>
       <div class="space-y-2 text-sm">
-        <div class="flex justify-between">
-          <span class="text-muted-foreground">Gåafstand til strand:</span>
-          <span class="font-medium">300m</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-muted-foreground">Sovepladser:</span>
-          <span class="font-medium">4 + 2 (anneks)</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-muted-foreground">Wi-Fi:</span>
-          <span class="font-medium">50/50 Mbit</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-muted-foreground">Parkering:</span>
-          <span class="font-medium">Ja</span>
-        </div>
+        {Object.entries(quickInfo).map(([key, value]) => (
+          <div class="flex justify-between">
+            <span class="text-muted-foreground">{key}:</span>
+            <span class="font-medium">{value}</span>
+          </div>
+        ))}
       </div>
     </CardContent>
   </Card>
