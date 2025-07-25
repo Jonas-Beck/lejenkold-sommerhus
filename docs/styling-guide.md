@@ -2,7 +2,7 @@
 
 ## 🎨 **Overview**
 
-Your summer house website uses a modern design system built with Tailwind CSS and shadcn-style components. This guide explains the styling approach and how to make design customizations.
+Your summer house website uses a modern design system built with Tailwind CSS and custom components. This guide explains the styling approach and how to make design customizations.
 
 ## 🏗️ **Architecture**
 
@@ -11,7 +11,7 @@ Your summer house website uses a modern design system built with Tailwind CSS an
 - **Framework**: Astro 5.x with React integration
 - **Styling**: Tailwind CSS 4.x
 - **Components**: Custom Astro components + React components
-- **Design System**: shadcn-inspired with CSS variables
+- **Design System**: Custom component system with CSS variables
 - **Icons**: Lucide React icons
 
 ### **File Structure**
@@ -21,7 +21,7 @@ src/
 ├── styles/
 │   └── global.css              # Main stylesheet with design tokens
 ├── components/
-│   ├── ui/                     # Base UI components (shadcn-style)
+│   ├── ui/                     # Base UI components
 │   │   ├── Card.astro
 │   │   ├── CardContent.astro
 │   │   └── CardHeader.astro

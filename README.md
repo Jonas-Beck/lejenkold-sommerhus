@@ -7,7 +7,7 @@ Modern summer house rental website for **Diernæs Strandby 98** in Haderslev, De
 ## 🏗️ Tech Stack
 
 - **Framework**: Astro 5.x with React integration
-- **Styling**: Tailwind CSS with shadcn-style components
+- **Styling**: Tailwind CSS with custom components
 - **Image Gallery**: React lightbox with pagination
 - **Maps**: Embedded Google Maps
 - **TypeScript**: Full type safety

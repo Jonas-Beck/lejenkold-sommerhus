@@ -1,6 +1,5 @@
 ---
-import Card from './ui/Card.astro';
-import CardContent from './ui/CardContent.astro';
+import Card from './Card.astro';
 import ContactInfo from './ContactInfo.astro';
 
 export interface Props {
@@ -14,15 +13,13 @@ const { email, phone, address, class: className = "" } = Astro.props;
 ---
 
 <Card class={className}>
-  <CardContent>
-    <h2 class="text-xl font-semibold mb-4">Kontakt os</h2>
-    <ContactInfo email={email} phone={phone} />
-    
-    <div class="mt-4 pt-4 border-t border-border">
-      <p class="text-sm text-muted-foreground">
-        <strong>Adresse:</strong><br>
-        {address}
-      </p>
-    </div>
-  </CardContent>
+  <h2 class="text-xl font-semibold mb-4">Kontakt os</h2>
+  <ContactInfo email={email} phone={phone} />
+  
+  <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      <strong>Adresse:</strong><br>
+      {address}
+    </p>
+  </div>
 </Card>
