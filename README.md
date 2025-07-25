@@ -1,3 +1,7 @@
+# ⚠️ 🤖 AI-Generated Code Alert! 🤖 ⚠️
+
+**WARNING: Everything created using AI - look at the code at your own risk!**
+
 # Lejenkold Sommerhus Website
 
 ## 📍 Project Overview
